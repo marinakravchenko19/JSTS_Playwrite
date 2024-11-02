@@ -1,0 +1,48 @@
+<!--
+    Напишіть програму мовою JavaScript, яка пропонує юзеру ввести  два числових значення (використати prompt()). 
+    Розрахувати суму, різницю, добуток і частку введених значень та вивести отримані результати. 
+    У випадку, якщо різниця вийшла від’ємною – результат потрібно перетворити в додатній.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo task 2</title>
+</head>
+
+<body>
+    <script>
+        let firstInput = prompt("Please input the first number");
+        let secondInput = prompt("Please input the second number");
+
+        alert(`You entered ${firstInput} and ${secondInput}`);
+
+        let firstNumber = parseFloat(firstInput);
+        let secondNumber = parseFloat(secondInput);
+
+
+        if (isNaN(firstNumber) || isNaN(secondNumber) || secondNumber == 0) {
+            alert("You need to input two numbers and the second one cannot be zero");
+        }
+        else {
+            let sum = firstNumber + secondNumber;
+            let diff = firstNumber - secondNumber;
+            if (diff < 0) {
+                diff = diff * (-1);
+            }
+            let mult = firstNumber * secondNumber;
+            let div = firstNumber / secondNumber;
+
+            alert(`
+            Sum of two numbers: ${sum}, 
+            Difference of two numbers: ${diff},
+            Multiplication of two numbers: ${mult}, 
+            Division of two numbers: ${div}`);
+        }
+
+    </script>
+</body>
+
+</html>

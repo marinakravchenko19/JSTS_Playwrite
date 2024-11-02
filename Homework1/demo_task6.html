@@ -1,0 +1,48 @@
+<!--
+Напишіть програму на JavaScript, яка приймає число від користувача і перевіряє, чи є це число простим. Простим є таке число, яке більше за 1 і ділиться без остачі тільки на себе і 1. Програма повинна вивести відповідне повідомлення, чи є число простим, чи ні.
+	
+Приклад роботи для числа 4:
+4 is not a prime number.
+
+Приклад роботи для числа 7:
+7 is a prime number.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo task 6</title>
+</head>
+
+<body>
+    <script>
+        let userInput = prompt("Please enter a number");
+        let number = parseInt(userInput);
+
+        if (isNaN(number) || (number < 0)) {
+            alert("Please input a positive number");
+        }
+        else if (number <= 3) {
+            alert(`${number} is a prime number`)
+        }
+        else if (number % 2 == 0 || number % 3 == 0) {
+            alert(`${number} is not a prime number`);
+        }
+        else {
+            let i = 5;
+            while (i * i <= number) {
+                if (number % i == 0 || number % (i + 2) == 0) {
+                    alert(`${number} is not a prime number`);
+                }
+                i += 6;
+            }
+            alert(`${number} is a prime number`);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!--
+Написати умовну конструкцію, яка в залежності від значення набраного балу по 100-бальній шкалі, виводитиме відповідний результат. 
+Зробити 2-ма різними способами через 2 різних умовних оператора.
+Для балів в діапазоні 0-49 – має виводитися оцінка ”Unsatisfied!”
+Для балів в діапазоні 50-70 – має виводитися оцінка ”Satisfied !”
+Для балів в діапазоні 71-87 – має виводитися оцінка “Good!”
+Для балів в діапазоні 88-100 – має виводитися оцінка “Excellent!”
+Для балів поза діапазоном 0-100 – має виводитися “Incorrect assessment!!”  
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo task 4</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        let input = prompt("Please input your grade");
+        let grade = parseInt(input);
+
+        // if else if statement
+
+        if (grade >= 0 && grade <= 49) {
+            alert("Unsatisfied! (if else if)");
+        }
+        else if (grade >= 50 && grade <= 70) {
+            alert("Satisfied! (if else if)");
+        }
+        else if (grade >= 71 && grade <= 87) {
+            alert("Good! (if else if)");
+        }
+        else if (grade >= 88 && grade <= 100) {
+            alert("Excellent! (if else if)");
+        }
+        else if (grade < 0 || grade > 100) {
+            alert("Incorrect assessment!! (if else if)");
+        }
+        else {
+            alert("You must input a number (if else if)");
+        }
+
+        // switch operator
+        switch (true) {
+            case (grade >= 0 && grade <= 49):
+                alert("Unsatisfied! (switch)");
+                break;
+            case (grade >= 50 && grade <= 70):
+                alert("Satisfied! (switch)");
+                break;
+            case (grade >= 71 && grade <= 87):
+                alert("Good! (switch)");
+                break;
+            case (grade >= 88 && grade <= 100):
+                alert("Excellent! (switch)");
+                break;
+            case (grade < 0 || grade > 100):
+                alert("Incorrect assessment!! (switch)");
+                break;
+            default:
+                alert("You must input a number (switch)");
+        }
+
+    </script>
+</body>
+
+</html>

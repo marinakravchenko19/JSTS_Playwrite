@@ -1,0 +1,46 @@
+<!--
+Напишіть програму мовою JavaScript, яка перетворює вхідне числове значення в стрінгу, яка містить відповідну кількість годин і хвилин.
+ Приклад роботи:
+ inputValue = 82;
+ result:  1:22
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo task 1</title>
+</head>
+
+<body>
+    <script>
+
+        const minutesInHour = 60;
+        let userInput;
+
+        // input minutes
+        userInput = prompt("Please input minutes you'd like to convert to hours.");
+        let userInputAsInt = parseInt(userInput)
+
+        // if user input is a number and not a string then convert to hours
+        if (!isNaN(userInputAsInt)) {
+            // calculate hours
+            let hours = parseInt(userInputAsInt / minutesInHour);
+
+            // calculate minutes
+            let minutes = userInputAsInt % minutesInHour;
+
+            // concatenate and display
+            let resultInHours = `${hours}:${minutes}`;
+            alert(`input value = ${userInput}, result: ${resultInHours}`);
+        }
+
+        // if user entered anything but a number let them know
+        else {
+            alert("Don't mess up with me, give me a number!");
+        }
+    </script>
+</body>
+
+</html>
