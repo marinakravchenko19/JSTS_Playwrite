@@ -15,14 +15,14 @@ deleteItemAndReturnNewArray = (arr = [], item) => {
     return arr.toSpliced(arr.indexOf(item), 1); // creates a copy of array without modifying the original array
 };
 
-let array1 = [3, 12, 16, 19, 21, 33];
+const array1 = [3, 12, 16, 19, 21, 33];
 console.log("Original array " + array1);
 deleteItem(array1, 16);
 console.log("Original array after deleting " + array1);
 
 
-let array2 = [4, 6, 8, 45, 98];
+const array2 = [4, 6, 8, 45, 98];
 console.log("Original array2 " + array2);
-let arrayWithDeletedItem = deleteItemAndReturnNewArray(array2, 45);
+const arrayWithDeletedItem = deleteItemAndReturnNewArray(array2, 45);
 console.log("Original array2 after deleting element " + array2);
 console.log("New array with deleted item " + arrayWithDeletedItem);

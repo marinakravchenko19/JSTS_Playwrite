@@ -10,7 +10,7 @@ Task 5. Реалізуйте функцію checkID(), яка пропонува
 
 checkID = () => {
     try {
-        let userId = prompt("Please enter your ID");
+        const userId = prompt("Please enter your ID");
         validateID(userId);
         alert("You've entered a valid ID!");
     } catch (error) {

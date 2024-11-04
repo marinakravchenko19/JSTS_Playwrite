@@ -6,7 +6,7 @@ console.log(difference([5, 10, 20], [0, 10, 20, 30]));		// ["5", "0", "30"]
  */
 
 findArrDiff = (arr1 = [], arr2 = []) => {
-    let combinedArray = arr1.concat(arr2);
+    const combinedArray = arr1.concat(arr2);
     let resultArray = [];
     combinedArray.forEach(el => {
         if (combinedArray.indexOf(el) == combinedArray.lastIndexOf(el)) {
