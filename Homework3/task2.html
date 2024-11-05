@@ -1,0 +1,38 @@
+<!--
+Для заданої HTML-сторінки: напишіть функцію addStyle(), яка спрацьовуватиме по кліку на кнопку button і змінюватиме:
+1)	стиль вмісту тега <h2>: колір шрифту червоний, шрифт із підкресленням
+2)	стиль вмісту тега <p>: колір шрифту коричневий, розмір шрифту 18 пс, шрифт сімейства "Comic Sans MS".
+3)	стиль вмісту тега <h2>: колір шрифту зедений, курсив
+4)	вміст тега <div> не повинен відображатися в браузері.
+-->
+
+<body>
+    <section>
+        <h2 class="header">Header</h2>
+        <p id='data'>DOM - document object model </p>
+        <span>Span</span>
+        <div>Invisible element</div>
+    </section>
+    <button id="btn">Add style</button>
+
+    <script>
+        document.getElementById("btn").onclick = addStyle;
+        function addStyle() {
+            const header = document.getElementsByClassName("header")[0];
+            header.style.color = 'red';
+            header.style.textDecoration = "underline";
+
+            const paragraph = document.getElementById("data");
+            paragraph.style.color = "brown";
+            paragraph.style.fontSize = "18px";
+            paragraph.style.fontFamily = "Comic Sans MS";
+
+            const span = document.getElementsByTagName("span")[0];
+            span.style.color = "green";
+            span.style.fontStyle = "italic";
+
+            const invisibleDiv = document.getElementsByTagName("div")[0];
+            invisibleDiv.style.display = "none";
+        }
+    </script>
+</body>

@@ -1,0 +1,35 @@
+<!--
+Task 1. На сторінці є форма "Новий користувач" із введеними даними користувача.
+Потрібно отримати дані з усіх полів та записати їх у наступні змінні name, phoneNumber, dateOfBirth, emailAddress.
+-->
+
+<!DOCTYPE html>
+
+<head>
+    <title>Task1</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend align="center"> Новий користувач </legend>
+        <input value="Name" type="text" data-form="ПІБ" class="text-data arr" name="fio" placeholder="Введіть ПІБ">
+        <input value="+380-00-000-0000" type="phone" data-form="Номер телефону" class="arr" name="phone"
+            placeholder="+380-00-000-0000">
+        <input value="2020-02-02" type="date" data-form="Дата народження" class="arr" name="birthday">
+        <input value="softserve@softserve.com" type="email" data-form="Електронна пошта" class="arr"
+            placeholder="email@softserveinc.com" name="email">
+        <input type="submit" class="btn">
+    </fieldset>
+
+    <script>
+        const fieldSetElemChildren = document.getElementsByTagName("fieldset")[0];
+        const inputs = fieldSetElemChildren.getElementsByTagName("input");
+        const name = inputs.fio.value;
+        const phoneNumber = inputs.phone.value;
+        const dateOfBirth = inputs.birthday.value;
+        const emailAddress = inputs.email.value;
+        console.log(`Name value= ${name}, phone number value = ${phoneNumber}, date of birth value = ${dateOfBirth}, email address value = ${emailAddress}`);
+    </script>
+</body>
+
+</html>

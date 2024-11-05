@@ -1,0 +1,42 @@
+<!--
+Task 3. Реалізуйте програму, яка по натисканню на кнопку виводитиме повідомлення 
+"I was pressed!", при наведенні на кнопку виводитиме повідомлення "Mouse on me!", а при відведенні курсора миші виводитиме повідомлення "Mouse is not on me!".
+-->
+<html>
+
+<head> </head>
+
+<body>
+
+    <button id="btn">Live button!</button>
+
+    <script>
+        const liveButton = document.getElementById("btn");
+        liveButton.onclick = buttonPress;
+        liveButton.onmouseover = buttonMouseOver;
+        liveButton.onmouseout = buttonMouseOut;
+
+        function buttonPress() {
+            const newParagraph = document.createElement("p");
+            const textNode = document.createTextNode("I was pressed!");
+            newParagraph.appendChild(textNode);
+            document.body.append(newParagraph);
+        }
+
+        function buttonMouseOver() {
+            const newParagraph = document.createElement("p");
+            const textNode = document.createTextNode("Mouse on me!");
+            newParagraph.appendChild(textNode);
+            document.body.append(newParagraph);
+        }
+
+        function buttonMouseOut() {
+            const newParagraph = document.createElement("p");
+            const textNode = document.createTextNode("Mouse is not on me!");
+            newParagraph.appendChild(textNode);
+            document.body.append(newParagraph);
+        }
+    </script>
+</body>
+
+</html>
