@@ -1,0 +1,36 @@
+<!--Task 4. Напишіть скріпт, який за допомогою засобів DOM створить для порожньої HTML-сторінки таку структуру з тегів і їх атрибутів.
+
+	     <body>
+            <article class="article postList">  
+                <div id="container">
+                    <p>Post 1</p>
+                    <p>Post 2</p>
+                    <p>Post 3</p>          
+                </div>
+            </article> 
+        </body>
+-->
+<html>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const articleElem = document.createElement("article");
+        articleElem.className = "article postList";
+        document.body.append(articleElem);
+
+        const divElem = document.createElement("div");
+        divElem.id = "container";
+        articleElem.append(divElem);
+
+        for (let i = 0; i < 3; i++) {
+            let pElem = document.createElement("p");
+            let pText = document.createTextNode(`Post ${i + 1}`);
+            pElem.append(pText);
+            divElem.append(pElem);
+        }
+    });
+
+</script>
+
+</html>
