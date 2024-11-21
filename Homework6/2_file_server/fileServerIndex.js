@@ -15,7 +15,7 @@ http.createServer(function (request, response) {
         try {
             const fileContent = readFileContentIfExists(fileName);
             response.writeHead(200, { 'Content-Type': 'text/html' });
-            response.end(`<h1>${fileContent}</h1>`);
+            response.end(fileContent);
         } catch (error) {
             response.writeHead(404, { 'Content-Type': 'text/html' });
             response.end(`<h1 style='color:red'>${error.message}</h1>`);
