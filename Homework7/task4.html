@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head> </head>
+
+<body>
+
+    <h1>Email list</h1>
+    <button onclick="loadEmails()">Get emails</button>
+    <ul id="emailList"></ul>
+
+    <script>
+        function loadEmails() {
+            const url = "https://fakestoreapi.com/users";
+
+            fetch(url)
+                .then(response => response.json())
+                .then((users) => {
+                    const listElement = document.getElementById("emailList");
+                    users.forEach(u => {
+                        listElement.innerHTML += `<li>${u.email}</li>`;
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error occured " + error);
+                });
+        }
+    </script>
+</body>
+
+</html>

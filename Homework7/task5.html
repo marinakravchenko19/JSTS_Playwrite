@@ -1,0 +1,36 @@
+<body>
+    <input type="text" id="userNameInput" placeholder="Enter user name">
+    <button id="getUserButton" onclick="getCityByName()">GET USER CITY BY Name</button>
+    <br>
+    <span id="userCity">user city here</span>
+
+    <script>
+        function getCityByName() {
+            const url = "https://jsonplaceholder.typicode.com/users";
+            const inputName = document.getElementById("userNameInput").value.trim();
+            const userCityOutputElem = document.getElementById("userCity");
+
+            if (!inputName) {
+                userCityOutputElem.innerText = "Please input a valid name!";
+                return;
+            }
+
+            fetch(url)
+                .then(response => response.json())
+                .then((users) => {
+                    const user = users.find(u => u.name.includes(inputName));
+
+                    if (user) {
+                        userCityOutputElem.innerText = `${user.address.city}`;
+                    }
+                    else {
+                        userCityOutputElem.innerText = "No such user!";
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error occured " + error);
+                });
+        }
+
+    </script>
+</body>
