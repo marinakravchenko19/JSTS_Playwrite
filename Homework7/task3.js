@@ -6,10 +6,7 @@ console.log(getLetterCount("The short text, and some more text"));
 function getLetterCount(text) {
     const result = {};
     const letters = text.toLowerCase().replace(/[^a-z]/g, '');
-    console.log("Letters: " + letters);
     const lettersArray = [...letters];
-    console.log("Letters array: " + lettersArray);
-
 
     lettersArray.forEach(symbol => {
         let regex = new RegExp(`${symbol}`, 'g');
