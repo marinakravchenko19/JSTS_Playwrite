@@ -1,4 +1,4 @@
-function processData(param: string | number | boolean | number[]) {
+function processData(param: string | number | boolean | number[]): string | number | boolean | number[] {
     switch (true) {
         case typeof param === "string":
             return param.toUpperCase();
