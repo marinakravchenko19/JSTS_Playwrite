@@ -37,7 +37,7 @@ const item: Parcel = {
             ? PackageStatus.Delivered
             : PackageStatus.Lost;
     },
-    get statusName() {
+    get statusName(): string {
         return PackageStatus[this.status];
     }
 }

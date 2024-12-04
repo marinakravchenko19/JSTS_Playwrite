@@ -12,7 +12,7 @@ export abstract class User {
         User.idCount++;
     }
 
-    protected get getId() {
+    protected get getId(): number {
         return this.id;
     }
 
